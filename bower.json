@@ -1,0 +1,23 @@
+{
+  "name": "zsframe",
+  "homepage": "https://github.com/vopecula/zsframe",
+  "authors": [
+    "Vopecula Broome <mail.kecskes.tamas@gmail.com>"
+  ],
+  "description": "",
+  "main": "app.html",
+  "moduleType": [],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.5",
+    "angular": "angularjs#~1.4.7"
+  }
+}

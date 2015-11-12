@@ -1,0 +1,86 @@
+//out: ../css/slider.css, compress: true
+//in: main.less, slider.less
+@import "main.less";
+
+@unitColor: black;
+
+.zs-slider-container{
+    .noselect;
+    position: relative;
+    background-color: white;
+    margin:10px;
+
+    //Ez kezel mindenféle user inputot, elterül az egész komponens területén, ez van legfelül.
+    .input{
+        z-index:10;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top:0px;
+        left:0px;
+    }
+
+    //Nyilak
+    .arrowContainer{
+        position: relative;
+        height:50px;
+
+        .arrowDown{
+            height:50px;
+            width:50px;
+            position: absolute;
+            left:-25px;
+            top:0px;
+            background-image: url("@{images}/down.png");
+            background-position: center bottom;
+            background-repeat: no-repeat;
+        }
+        .arrowUp{
+            height:50px;
+            width:50px;
+            position: absolute;
+            left:-25px;
+            top:0px;
+            background-image: url("@{images}/up.png");
+            background-position: center top;
+            background-repeat: no-repeat;
+        }
+    }
+
+    //Csúszka vonala
+    .line{
+        height:2px;
+        background-color: black;
+        position:relative;
+
+        //Beosztás vonala
+        .unit{
+            position: absolute;
+            width:1px;
+            height:8px;
+            left:0px;
+            bottom:2px;
+            background-color: @unitColor;
+
+        }
+        //Beosztás vonala, nagyobb mértékeknél
+        .unitBig{
+            position: absolute;
+            width:1px;
+            height:12px;
+            left:0px;
+            bottom:2px;
+            background-color: @unitColor;
+        }
+        //Beosztások szövege
+        .unitText{
+            position: absolute;
+            left:-25px;
+            width:50px;
+            top:-13px;
+            text-align: center;
+            font-size: 10px;
+            color:@unitColor;
+        }
+    }
+}

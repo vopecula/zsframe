@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Slider test area</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link href="style/css/slider.css" rel="stylesheet" type="text/css"/>
+        <link href="style/css/main.css" rel="stylesheet" type="text/css"/>
+        <link href="style/css/toggle.css" rel="stylesheet" type="text/css"/>
+
+        <script src="bower_components/jquery/dist/jquery.min.js" type="text/javascript"></script>
+        <script src="js/components/slider.js" type="text/javascript"></script>
+        <script src="js/components/dualSlider.js" type="text/javascript"></script>
+        <script src="js/components/toggle.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <h1>Future components</h1>
+        <p>Minden ami később a sencha touch leváltásához kell itt lesz letesztelve első körben.</p>
+        <hr>
+        <h4>Simple slider</h4>
+        <p>Sima egy nyilas slider, az onValueChange esemény akkor fut le ha az érték megváltozott.</p>
+        <script type="text/javascript">
+			for (var i = 0; i < 5; i++) {
+				new singleSlider({
+					maxValue: 90,
+					minValue: 100,
+					stepSize: 5,
+					displayStepSize: 10,
+					displayStepSizeBig: 1,
+					value: 10,
+					onValueChange: function (val) {
+						//console.log("Érték: " + (val - 100));
+					}
+				}).renderTo(document.body);
+			}
+        </script>
+        <hr>
+        <h4>Dual slider</h4>
+        <p>Duplanyilas slider. Ha a felső nyilat fogom meg akkor azt mozgatom, ha az alsót akkor azt. Két elemű tömböt ad vissza értékként.</p>
+        <script type="text/javascript">
+			for (var i = 0; i < 5; i++) {
+				new dualSlider({
+					maxValue: 90,
+					minValue: -100,
+					stepSize: 5,
+					displayStepSize: 10,
+					value: [10, 40],
+					onValueChange: function (val) {
+						//console.log((val[0] - 100) + " - " + (val[1] - 100));
+					}
+				}).renderTo(document.body);
+			}
+        </script>
+        <hr>
+        <h4>Toggle</h4>
+
+        <script type="text/javascript">
+			for (var i = 0; i < 5; i++) {
+				new toggle({
+					value: false,
+					onValueChange: function (val) {
+						//console.log((val[0] - 100) + " - " + (val[1] - 100));
+					}
+				}).renderTo(document.body);
+			}
+        </script>
+        <hr>
+        <h4>Radio groups <small>not done yet</small></h4>
+        <h4>Containers <small>not done yet</small></h4>
+        <h4>Check containers <small>not done yet</small></h4>
+
+    </body>
+</html>
